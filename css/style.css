@@ -105,11 +105,7 @@ header div span {
 
 #pesquisa input::placeholder {
     font-size: 35px;
-    color: whitesmoke;
-}
-
-#pesquisa input:focus::placeholder {
-    color: #00a490;
+    color: #f2a7a1;
 }
 
 #pesquisa input:hover::placeholder {
