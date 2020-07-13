@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Page</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <!--<header>
-        <div>
-            <span>>>> </span><input type="radio" name="DM" id="color1" onclick="dm()">
-           <!-- <input type="radio" name="DM" id="color2">
-            <input type="radio" name="DM" id="color3">
-        </div>
-    </header>-->
+
     <header>
-        <div class="switch__container">
-            <input id="switch-shadow" class="switch switch--shadow" type="checkbox" onclick="dm()">
-            <label for="switch-shadow"></label>
-        </div>
-    </header>    
+        <label class="switch">
+            <input type="checkbox" id="switch_check" onclick="dm()">
+            <span class="slider round"></span>
+        </label>
+    </header>
 
     <form id="form-search" target="_blank" action="https://duckduckgo.com/" method="get" autocomplete="off">
         <div id="pesquisa">
             <input type="search" name="Search" id="search" placeholder="./search">
         </div>
     </form>
-    
+
     <section id="container">
         <div class="bloco">
             <h2><span>> </span>Social</h2>
@@ -73,4 +69,5 @@
 
     <script src="./script/script.js"></script>
 </body>
+
 </html>

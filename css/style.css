@@ -1,89 +1,106 @@
+/* -----------------------------------------
+                Reset
+------------------------------------------*/
+
 * {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
+
+/* -----------------------------------------
+               Color Scheme
+------------------------------------------*/
+
+:root {
+    --background-color-1: #f04f42;
+    --background-color-2: #3D405B;
+}
+
 body {
-    background-color: #f04f42;
+    background-color: var(--background-color-1);
     font-size: 14pt;
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
+    margin-top: 8px;
 }
-
 
 header {
-    position: fixed;
     text-align: right;
-    top: 0;
-    width: 99vw;
+    width: 99.5vw;
 }
 
-header input {
-    margin-left: 10px;
-}
 
-header div span {
-    color: whitesmoke;
-}
+/* -----------------------------------------
+                Switch Checkbox
+------------------------------------------*/
 
-/* Estilo iOS site >>> https://willianjusten.com.br/criando-um-switch-button-com-css/*/
-.switch__container {
-    margin: 30px auto;
-    width: 120px;
-  }
-  
-  .switch {
-    visibility: hidden;
-    position: absolute;
-    margin-left: -9999px;
-  }
-  
-  .switch + label {
-    display: block;
+.switch {
     position: relative;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-  }
-  
-  .switch--shadow + label {
-    padding: 2px;
-    width: 120px;
-    height: 60px;
-    background-color: #dddddd;
-    border-radius: 60px;
-  }
-  .switch--shadow + label:before,
-  .switch--shadow + label:after {
-    display: block;
+    display: inline-block;
+    width: 32px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
     position: absolute;
-    top: 1px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color-2);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid white;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
     left: 1px;
     bottom: 1px;
-    content: "";
-  }
-  .switch--shadow + label:before {
-    right: 1px;
-    background-color: #3D405B;
-    border-radius: 60px;
-    transition: background 0.4s;
-  }
-  .switch--shadow + label:after {
-    width: 62px;
-    background-color: #fff;
-    border-radius: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s;
-  }
-  .switch--shadow:checked + label:before {
-    background-color: #f04f42;
-  }
-  .switch--shadow:checked + label:after {
-    transform: translateX(60px);
-  }
-  
-/*---------------------------------------*/
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--background-color-1);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--background-color-1);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* -----------------------------------------
+                Search input
+------------------------------------------*/
+
 #pesquisa {
     width: 100vw;
     height: 100px;
@@ -123,6 +140,9 @@ header div span {
 }
 
 
+/* -----------------------------------------
+               Conteudo principal
+------------------------------------------*/
 
 #container {
     width: 100vw;
@@ -134,12 +154,11 @@ header div span {
     height: 300px;
     display: flex;
     justify-content: center;
-    
 }
 
 .bloco {
     background-color: whitesmoke;
-    color: #f04f42;
+    color: var(--background-color-1);
     width: 180px;
     height: 240px;
     margin: 20px;
@@ -180,6 +199,6 @@ header div span {
 }
 
 span {
-    color: #f04f42;
+    color: var(--background-color-1);
     font-weight: bolder;
 }
