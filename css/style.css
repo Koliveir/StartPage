@@ -14,15 +14,47 @@
 ------------------------------------------*/
 
 :root {
-    --background-color-1: #f04f42;
-    --background-color-2: #3D405B;
+    /*Modo normal*/
+    --background-color-1: #f04f42;  /*background do body*/
+    --body--color-1: whitesmoke;    /*color do body*/    
+    --slider--color-1: white;   /*color botão slider*/
+    --slider-bef--color-1: white;   /*color botão slider before*/
+    --pesq--inp--color-1: whitesmoke;   /*color texto input pesquisa*/
+    --pesq--border--color-1: whitesmoke;    /*color border-bottom da pesquisa*/
+    --pesq--placeh--color-1: #F2A7A1;   /*color texto placeholder da pesquisa*/
+    --pesq--inp-h--color-1: azure;  /*color hover do border-bottom DESATIVADO*/
+    --pesq--inp--f--color-1: #00A490; /*color border pesquisa quando em focus*/
+    --bloco--background--color-1: whitesmoke;   /*color background dos blocos*/
+    --bloco--color-1: #F04F42; /*color textos dos blocos*/
+    --bloco--boxsha--color-1: #242325; /*color boxshadow*/
+    --bloco--boxsha-h--color-1: #00A490; /*color boxshadow em hover*/
+    --bloco--background-h--color-1: azure; /*color do background em hover*/
+    --bloco--a--color-1: #00A490; /*color links dos blocos*/
+    --bloco--a-h--color-1: #F04F42; /*color links dos blocos em hover*/
+    /*Modo Dark*/
+    --background-color-2: #3D405B;  /*background do body*/
+    --body--color-2: whitesmoke;    /*color do body*/ 
+    --slider--color-2: white;   /*color botão slider*/
+    --slider-bef--color-2: white;   /*color botão slider before*/
+    --pesq--inp--color-2: whitesmoke;   /*color texto input pesquisa*/
+    --pesq--border--color-2: whitesmoke;    /*color border-bottom da pesquisa*/
+    --pesq--placeh--color-2: #F2A7A1;   /*color texto placeholder da pesquisa*/
+    --pesq--inp-h--color-2: azure;  /*color hover do border-bottom DESATIVADO*/
+    --pesq--inp--f--color-2: #00A490;   /*color border pesquisa quando em focus*/
+    --bloco--background--color-2: whitesmoke;   /*color background dos blocos*/
+    --bloco--color-2: #F04F42; /*color textos dos blocos*/
+    --bloco--boxsha--color-2: #242325; /*color boxshadow*/
+    --bloco--boxsha-h--color-2: #00A490; /*color boxshadow em hover*/
+    --bloco--background-h--color-2: azure; /*color do background em hover*/
+    --bloco--a--color-2: #00A490; /*color links dos blocos*/
+    --bloco--a-h--color-2: #F04F42; /*color links dos blocos em hover*/
 }
 
 body {
     background-color: var(--background-color-1);
     font-size: 14pt;
     font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+    color: var(--body--color-1);
     margin-top: 8px;
 }
 
@@ -59,7 +91,7 @@ header {
     background-color: var(--background-color-2);
     -webkit-transition: .4s;
     transition: .4s;
-    border: 1px solid white;
+    border: 1px solid var(--slider--color-1);
 }
 
 .slider:before {
@@ -69,7 +101,7 @@ header {
     width: 16px;
     left: 1px;
     bottom: 1px;
-    background-color: white;
+    background-color: var(--slider-bef--color-1);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -114,28 +146,24 @@ input:checked+.slider:before {
     background-color: transparent;
     font-size: 30px;
     padding-right: 15px;
-    color: whitesmoke;
+    color: var(--pesq--inp--color-1);
     width: 650px;
     height: 40px;
-    border-bottom: 3px solid whitesmoke;
+    border-bottom: 3px solid var(--pesq--border--color-1);
 }
 
 #pesquisa input::placeholder {
     font-size: 35px;
-    color: #f2a7a1;
-}
-
-#pesquisa input:hover::placeholder {
-    color: azure;
+    color: var(--pesq--placeh--color-1);
 }
 
 #pesquisa input:hover {
-    border-bottom: 3px solid azure;
+    /*border-bottom: 3px solid var(--pesq--inp-h--color-1);*/
     outline: none;
 }
 
 #pesquisa input:focus {
-    border-bottom: 3px solid #00a490;
+    border-bottom: 3px solid var(--pesq--inp--f--color-1);
     outline: none;
 }
 
@@ -157,20 +185,20 @@ input:checked+.slider:before {
 }
 
 .bloco {
-    background-color: whitesmoke;
-    color: var(--background-color-1);
+    background-color: var(--bloco--background--color-1);
+    color: var(--bloco--color-1);
     width: 180px;
     height: 240px;
     margin: 20px;
     text-align: center;
     padding-top: 1.8%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #242325;
+    box-shadow: 5px 5px 5px var(--bloco--boxsha--color-1);
 }
 
 .bloco:hover {
-    box-shadow: 5px 5px 5px #00a490;
-    background-color: azure;
+    box-shadow: 5px 5px 5px var(--bloco--boxsha-h--color-1);
+    background-color: var(--bloco--background-h--color-1);
 }
 
 .bloco h2 {
@@ -186,12 +214,12 @@ input:checked+.slider:before {
 
 .bloco a {
     text-decoration: none;
-    color: #00a490;
+    color: var(--bloco--a--color-1);
 }
 
 .bloco a:hover {
     text-decoration: none;
-    color: #f04f42;
+    color: var(--bloco--a-h--color-1);
 }
 
 .bloco a:hover span {
